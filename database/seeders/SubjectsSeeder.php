@@ -48,7 +48,7 @@ class SubjectsSeeder extends Seeder
                 'description' =>'khong co',
                 'avatar' =>'khong co',
                 'status' =>1,
-                'userId' =>1,
+                'userId' =>2,
                 'created_at'=>now()
             ],
             [
@@ -57,7 +57,7 @@ class SubjectsSeeder extends Seeder
                 'description' =>'khong co',
                 'avatar' =>'khong co',
                 'status' =>1,
-                'userId' =>1,
+                'userId' =>2,
                 'created_at'=>now()
             ]
         ];

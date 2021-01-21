@@ -14,9 +14,9 @@ class CreateClassesTable extends Migration
     public function up()
     {
         Schema::create('classes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->unique();
             $table->string('name');
-            $table->string('avatar');
+            $table->string('avatar')->nullable();
             $table->integer('status')->default(1);
             $table->foreignId('userId')->constrained('users');
             $table->foreignId('subjectId')->constrained('subjects');

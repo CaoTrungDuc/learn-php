@@ -22,12 +22,13 @@ class UserSeeder extends Seeder
                 'birthday' => 1605691738,
                 'phoneNumber' =>'0346196048',
                 'job' =>'sinh vien',
-                'avatar'=>'khong co',
-                'facebook' =>'khong co',
-                'gender' =>'nam',
-                'country' =>'Nam dinh',
-                'role' =>'admin',
-                'status' =>1
+                'avatar'=>'https://www.facebook.com/profile.php?id=100012960016321',
+                'facebook' =>'https://www.facebook.com/profile.php?id=100012960016321',
+                'gender' =>1,
+                'country' =>'Nam Dinh',
+                'role' =>1,
+                'status' =>1,
+                'created_at' =>now()
 
             ],
 
@@ -37,14 +38,14 @@ class UserSeeder extends Seeder
                 'email' => 'anhcdomql123@gmail.com',
                 'birthday' => 1625691738,
                 'phoneNumber' =>'0246196048',
-                'job' =>'sinh vaien',
-                'avatar'=>'khonga co',
-                'facebook' =>'kahong co',
-                'gender' =>'nam',
-                'country' =>'Nam dinh',
-                'role' =>'admin',
-                'status' =>1
-
+                'job' =>'sinh vien',
+                'avatar'=>'https://www.facebook.com/profile.php?id=100012960a016321',
+                'facebook' =>'https://www.facebook.com/profile.php?id=100012a960016321',
+                'gender' =>1,
+                'country' =>'Nam Dinh',
+                'role' =>1,
+                'status' =>1,
+                'created_at' =>now()
             ]
 
         ];

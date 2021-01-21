@@ -14,15 +14,15 @@ class CreateCourseRqsTable extends Migration
     public function up()
     {
         Schema::create('course_rqs', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('frequency');
-            $table->integer('duration');
-            $table->integer('targetTop');
-            $table->integer('wishJob');
-            $table->integer('completeExercise');
-            $table->integer('outCondition');
-            $table->string('nowSkill');
-            $table->string('mission');
+            $table->bigIncrements('id')->unique();
+            $table->tinyInteger('frequency')->nullable();
+            $table->integer('duration')->nullable();
+            $table->tinyInteger('targetTop')->nullable();
+            $table->tinyInteger('wishJob')->nullable();
+            $table->tinyInteger('completeExercise')->nullable();
+            $table->tinyInteger('outCondition')->nullable();
+            $table->string('nowSkill')->nullable();
+            $table->string('mission')->nullable();
             $table->foreignId('userId')->constrained('users');
             $table->foreignId('classesId')->constrained('classes');
             $table->integer('status')->default(3);
