@@ -27,7 +27,7 @@ class CourseRqsSeeder extends Seeder
                 'completeExercise'=>rand(1,3),
                 'outCondition' =>rand(1,3),
                 'nowSkill' =>$data_skill[rand(0,2)],
-                'mission' =>'se cham chi',
+                'mission' =>'sẽ chăm chỉ',
                 'userId' =>$i+2,
                 'classesId'=>rand(2,6),
                 'status' =>3,
