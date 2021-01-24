@@ -19,7 +19,7 @@
             font-family: 'Nunito';
         }
         .content, .nav {
-            width:80%;
+            width:100%;
             margin: auto;
         }
     </style>
@@ -36,7 +36,7 @@
         <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="point" role="tab" aria-controls="pills-contact" aria-selected="false">Danh sách Subject</a>
     </li>
     <li class="nav-item" role="presentation">
-        <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="point" role="tab" aria-controls="pills-contact" aria-selected="false">Danh sách điểm</a>
+        <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="point" role="tab" aria-controls="pills-contact" aria-selected="false">Danh sách CourseRqs</a>
     </li>
 </ul>
 <div class="content">

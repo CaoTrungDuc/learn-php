@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\ClassesController;
 use \App\Http\Controllers\SubjectsController;
+use \App\Http\Controllers\CourseRqsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +22,17 @@ Route::get('/', function () {
 });
 //User
 Route::get('/user',[UserController::class,'getListUser']);
-Route::post('/addUserAdmin',[UserController::class,'addUserAdmin']);
+Route::post('/admin',[UserController::class,'addUserAdmin']);
 
 //Class
 Route::get('/class',[ClassesController::class,'getListClass']);
-Route::post('/addClass',[ClassesController::class,'addClass']);
+Route::post('/Class',[ClassesController::class,'addClass']);
 
 //Subject
 Route::get('/subject',[SubjectsController::class,'getListSubject']);
-Route::post('/addSubject',[SubjectsController::class,'addSubject']);
+Route::post('/subject',[SubjectsController::class,'addSubject']);
 
+//CourseRqs
+Route::get('/courseRqs',[CourseRqsController::class,'getListCourseRqs']);
+Route::post('/courseRqs',[CourseRqsController::class,'addCourseRqs']);
 
