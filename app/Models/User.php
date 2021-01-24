@@ -7,6 +7,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * @property mixed birthday
+ * @property mixed email
+ * @property mixed phoneNumber
+ * @property mixed Job
+ * @property mixed avatar
+ * @property mixed facebook
+ * @property mixed gender
+ * @property mixed country
+ * @property mixed role
+ * @property mixed status
+ * @property mixed fullName
+ */
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;

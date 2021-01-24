@@ -17,7 +17,7 @@ class CreateSubjectsTable extends Migration
             $table->bigIncrements('id')->unique();
             $table->string('name')->unique();
             $table->string('description')->nullable();
-            $table->string('avatar')->nullable();
+            $table->longText('avatar')->nullable();
             $table->integer('status')->default(1);
             $table->foreignId('userId')->constrained('users');
             $table->timestamps();

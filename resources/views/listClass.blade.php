@@ -4,6 +4,8 @@
         <th>ID</th>
         <th>Tên Lớp</th>
         <th>Avatar</th>
+        <th>Người đăng kí</th>
+        <th>Môn học</th>
         <th>Trạng thái</th>
         <th>Ngày tạo</th>
         <th>Chỉnh sửa</th>
@@ -12,6 +14,8 @@
                 <td>{{$class->id}}</td>
                 <td>{{$class->name}}</td>
                 <td><img style="height: 40px" src="{{$class->avatar}}" alt="avatar_class" </td>
+                <td>{{$class->userId}}</td>
+                <td>{{$class->subjectId}}</td>
                 <td>
                     @if($class->status === 1)
                     <span style="color: green"> Đang hoạt động</span>
@@ -21,8 +25,8 @@
                 </td>
                 <td>{{$class->created_at }}</td>
                 <td><span style="color: blue;cursor: pointer">Chỉnh sửa</span></td>
+
             </tr>
          @endforeach
-
     </table>
 @endsection

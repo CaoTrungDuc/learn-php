@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->integer('birthday')->nullable();
             $table->string('phoneNumber')->unique()->nullable();
             $table->string('job')->nullable();
-            $table->string('avatar')->nullable();
+            $table->longText('avatar')->nullable();
             $table->string('facebook')->unique()->nullable();
             $table->tinyInteger('gender')->nullable();
             $table->string('country')->nullable();
