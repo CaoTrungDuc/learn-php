@@ -11,19 +11,43 @@ class UserController extends Controller
         $list_user =User::all()->sortByDesc('created_at');
         return view('listUser',compact('list_user'));
     }
-    public function addUserAdmin(Request $request){
+    public function addAdmin(Request $request){
         $admin = new User();
-        $admin->fullName = $request->input('fullName');
-        $admin->birthday = $request->input('birthday');
-        $admin->email = $request->input('email');
-        $admin->phoneNumber = $request->input('phoneNumber');
-        $admin->Job = $request->input('Job');
-        $admin->avatar = $request->input('avatar');
-        $admin->facebook = $request->input('facebook');
-        $admin->gender = $request->input('gender');
-        $admin->country = $request->input('country');
-        $admin->role = $request->input('role');
-        $admin->status = $request->input('status');
+        $admin->fullName = $request->fullName;
+        $admin->birthday = $request->birthday;
+        $admin->email = $request->email;
+        $admin->phoneNumber = $request->phoneNumber;
+        $admin->Job = $request->Job;
+        $admin->avatar = $request->avatar;
+        $admin->facebook = $request->facebook;
+        $admin->gender = $request->gender;
+        $admin->country = $request->country;
+        $admin->role = $request->role;
+        $admin->status = $request->status;
         $admin->save();
+    }
+    public function updateAdmin(Request $request ,$id){
+        $admin = User::find($id);
+        $admin->fullName = $request->fullName;
+        $admin->birthday = $request->birthday;
+        $admin->email = $request->email;
+        $admin->phoneNumber = $request->phoneNumber;
+        $admin->Job = $request->Job;
+        $admin->avatar = $request->avatar;
+        $admin->facebook = $request->facebook;
+        $admin->gender = $request->gender;
+        $admin->country = $request->country;
+        $admin->role = $request->role;
+        $admin->status = $request->status;
+        $admin->save();
+    }
+    public function deleteAdmin($id): \Illuminate\Http\JsonResponse
+    {
+        $admin = User::find($id);
+        $admin ->delete();
+        return response()->json([
+            "meta" =>["code"=>SC_SUCCESS,"mgs" =>"MGS_DELETE_SUCCESS"],
+            "data" => $admin],
+            SC_SERVER_ERROR);
     }
 }

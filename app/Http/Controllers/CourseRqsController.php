@@ -13,17 +13,40 @@ class CourseRqsController extends Controller
     }
     public function addCourseRqs(Request $request){
         $courseRqs=new Course_rqs();
-        $courseRqs->frequency=$request->input('frequency');
-        $courseRqs->duration=$request->input('duration');
-        $courseRqs->targetTop=$request->input('targetTop');
-        $courseRqs->wishJob=$request->input('wishJob');
-        $courseRqs->completeExercise=$request->input('completeExercise');
-        $courseRqs->outCondition=$request->input('outCondition');
-        $courseRqs->nowSkill=$request->input('nowSkill');
-        $courseRqs->mission=$request->input('mission');
-        $courseRqs->userId=$request->input('userId');
-        $courseRqs->classesId=$request->input('classesId');
-        $courseRqs->status=$request->input('status');
+        $courseRqs->frequency=$request->frequency;
+        $courseRqs->duration=$request->duration;
+        $courseRqs->targetTop=$request->targetTop;
+        $courseRqs->wishJob=$request->wishJob;
+        $courseRqs->completeExercise=$request->completeExercise;
+        $courseRqs->outCondition=$request->outCondition;
+        $courseRqs->nowSkill=$request->nowSkill;
+        $courseRqs->mission=$request->mission;
+        $courseRqs->userId=$request->userId;
+        $courseRqs->classesId=$request->classesId;
+        $courseRqs->status=$request->status;
         $courseRqs->save();
+    }
+    public function updateCourseRqs(Request $request,$id){
+        $courseRqs=Course_rqs::find($id);
+        $courseRqs->frequency=$request->frequency;
+        $courseRqs->duration=$request->duration;
+        $courseRqs->targetTop=$request->targetTop;
+        $courseRqs->wishJob=$request->wishJob;
+        $courseRqs->completeExercise=$request->completeExercise;
+        $courseRqs->outCondition=$request->outCondition;
+        $courseRqs->nowSkill=$request->nowSkill;
+        $courseRqs->mission=$request->mission;
+        $courseRqs->userId=$request->userId;
+        $courseRqs->classesId=$request->classesId;
+        $courseRqs->status=$request->status;
+        $courseRqs->save();
+    }
+    public function deleteCourseRqs($id){
+        $courseRqs=Course_rqs::find($id);
+        $courseRqs->delete();
+        return response()->json([
+            "meta" =>["code"=>SC_SUCCESS,"mgs" =>"MGS_DELETE_SUCCESS"],
+            "data" => $courseRqs],
+            SC_SERVER_ERROR);
     }
 }

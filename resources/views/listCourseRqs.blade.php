@@ -14,6 +14,7 @@
     <th>Người đăng kí</th>
     <th>Lớp đăng kí</th>
     <th>Trạng thái</th>
+    <th>Ngày tạo</th>
     <th>Chỉnh sửa</th>
     @foreach($list_courseRqs as $courseRqs)
         <tr>
@@ -89,6 +90,7 @@
                 @endif
             @endif
             </td>
+            <td>{{$courseRqs->created_at}}</td>
             <td><span style="color: blue;cursor: pointer">Chỉnh sửa</span></td>
 
         </tr>
