@@ -18,10 +18,9 @@ class CreateSubjectsTable extends Migration
             $table->string('name')->unique();
             $table->string('description')->nullable();
             $table->longText('avatar')->nullable();
-            $table->integer('status')->default(1);
+            $table->integer('status')->default(SUBJECT_STATUS);
             $table->foreignId('userId')->constrained('users');
             $table->timestamps();
-
         });
     }
 

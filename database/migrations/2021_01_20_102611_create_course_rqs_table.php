@@ -25,7 +25,7 @@ class CreateCourseRqsTable extends Migration
             $table->string('mission')->nullable();
             $table->foreignId('userId')->constrained('users');
             $table->foreignId('classesId')->constrained('classes');
-            $table->integer('status')->default(3);
+            $table->integer('status')->default(COURSE_STATUS);
             $table->timestamps();
         });
     }

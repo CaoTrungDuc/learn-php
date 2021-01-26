@@ -15,9 +15,9 @@ class CreateClassesTable extends Migration
     {
         Schema::create('classes', function (Blueprint $table) {
             $table->bigIncrements('id')->unique();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->longText('avatar',16000)->nullable();
-            $table->integer('status')->default(1);
+            $table->integer('status')->default(CLASS_STATUS);
             $table->foreignId('userId')->constrained('users');
             $table->foreignId('subjectId')->constrained('subjects');
             $table->timestamps();
