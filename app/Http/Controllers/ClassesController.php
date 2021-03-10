@@ -13,7 +13,12 @@ class ClassesController extends Controller
         $list_class = Classes::all()->sortByDesc('created_at');
         return view('listClass', compact('list_class'));
     }
-
+    public function searchClass(Request $request)
+    {
+        $name = $request->keywords_name;
+        $list_class = Classes::where('name', 'like', "%{$name}%")->get();
+        return view('listClass', compact('list_class'));
+    }
     public function addClass(Request $request)
     {
         $validate = Validator::make($request->all(), [

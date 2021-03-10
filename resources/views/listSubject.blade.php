@@ -9,6 +9,17 @@
         <th>Trạng thái</th>
         <th>Ngày tạo</th>
         <th>Chỉnh sửa</th>
+        @section('search')
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <form action="{{URL::to('/subject/search')}}" method="POST" class="d-flex">
+                        {{csrf_field()}}
+                        <input class="form-control me-2" type="search" name="keywords_name" placeholder="Search" aria-label="Search">
+                        <input class="btn btn-outline-success" type="submit" value="Tìm kiếm"></input>
+                    </form>
+                </div>
+            </nav>
+        @endsection
         @foreach($list_subject as $subject)
             <tr>
                 <td>{{$subject->id}}</td>

@@ -13,7 +13,11 @@ class SubjectsController extends Controller
         $list_subject = Subjects::all()->sortByDesc('created_at');
         return view('listSubject', compact('list_subject'));
     }
-
+    public function searchSubject(Request $request){
+        $name =$request->keywords_name;
+        $list_subject = Subjects::where('name','like',"%{$name}%") ->get();
+        return view('listSubject', compact('list_subject'));
+    }
     public function addSubject(Request $request)
     {
         $validate =Validator::make($request->all(),[

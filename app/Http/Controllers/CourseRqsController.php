@@ -12,6 +12,11 @@ class CourseRqsController extends Controller
         $list_courseRqs=Course_rqs::all()->sortByDesc('created_at');
         return view('listCourseRqs',compact('list_courseRqs'));
     }
+    public function searchCourseRqs(Request $request){
+        $name =$request->keywords_name;
+        $list_courseRqs=Course_rqs::where('userId','like',"%{$name}%")->get();
+        return view('listCourseRqs',compact('list_courseRqs'));
+    }
     public function addCourseRqs(Request $request){
         $validate = Validator::make($request->all(),[
             "frequency"=>"required|integer|max:3|min:1",

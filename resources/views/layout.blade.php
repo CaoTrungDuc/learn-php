@@ -39,6 +39,9 @@
         <a class="nav-link {{checkMenuActive("/courseRqs")}}"  href="/courseRqs" >Danh sách CourseRqs</a>
     </li>
 </ul>
+<div class="search">
+    @yield('search')
+</div>
 <div class="content">
     @yield('content')
 </div>
