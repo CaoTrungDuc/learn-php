@@ -13,7 +13,7 @@
         </div>
 
         <!-- Login Form -->
-        <form action="{{URL::to('')}}" method="POST">
+        <form action="{{\Illuminate\Support\Facades\URL::to('/login')}}" method="POST">
             {{csrf_field()}}
             <input type="text" id="login" class="fadeIn second" name="email" placeholder="email">
             <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">

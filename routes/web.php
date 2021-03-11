@@ -16,23 +16,24 @@ use \App\Http\Controllers\CourseRqsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('layout');
-});
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
+//
+//Route::get('/', function () {
+//    return view('layout');
+//});
+Route::get('',[\App\Http\Controllers\LoginController::class,'getLogin']);
+Route::post('',[\App\Http\Controllers\LoginController::class,'postLogin']);
+//Route::get('/login', function () {
+//    return view('login');
+//});
+//Route::get('/register', function () {
+//    return view('register');
+//});
 //User
 Route::get('/user',[UserController::class,'getListUser']);
 Route::post('/admin',[UserController::class,'addAdmin']);
 Route::put('/admin/{id}',[UserController::class,'updateAdmin']);
 Route::delete('/admin/{id}',[UserController::class,'deleteAdmin']);
 Route::post('/user/search',[UserController::class,'searchUser']);
-Route::post('/login',[UserController::class,'loginAccount']);
 //Class
 Route::get('/class',[ClassesController::class,'getListClass']);
 Route::post('/class',[ClassesController::class,'addClass']);
@@ -55,3 +56,11 @@ Route::delete('/courseRqs/{id}',[CourseRqsController::class,'deleteCourseRqs']);
 Route::post('/courseRqs/search',[CourseRqsController::class,'searchCourseRqs']);
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

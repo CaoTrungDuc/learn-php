@@ -113,14 +113,4 @@ class UserController extends Controller
                  ->get();
         return view('listUser', compact('list_user'));
     }
-    public function loginAccount(Request $request)
-    {
-        $email =$request->email;
-        $password=$request->password;
-        $result = User::where('email','=',$email)->get('email');
-        dd($result,$email);
-
-//        else
-//            return view('thatbai', compact('result'));
-    }
 }
